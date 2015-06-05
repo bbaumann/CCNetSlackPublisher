@@ -21,12 +21,13 @@ namespace ThoughtWorks.CruiseControl.Core.Publishers
 
         private string FormatText(IIntegrationResult result)
         {
-            return string.Format("<{0}|{1}> {2} {3} {4}",
+            return string.Format("<{0}|{1}> {2} {3} {4} (by {5})",
                 result.ProjectUrl,
                 result.ProjectName,
                 result.Label,
                 result.Status,
-                result.Succeeded ? ":white_check_mark:" : ":interrobang:");
+                result.Succeeded ? ":white_check_mark:" : ":interrobang:",
+                result.IntegrationRequest.UserName);
         }
     }
 }
